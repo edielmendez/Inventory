@@ -13,7 +13,7 @@ if (session_id()==null)
  	<title>HOME</title>
  	<!-- include material design CSS -->
     <link rel="stylesheet" href="../libs/css/materialize.min.css" />
-     
+    <link href="../libs/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
     <!-- include material design icons -->
    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />-->
     <style>
@@ -38,7 +38,7 @@ if (session_id()==null)
 
 	
 	<script type="text/javascript" src="../libs/js/app.js"></script>
-	<script type="text/javascript" src="../libs/js/script.js"></script>
+
 	<script src="../libs/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -51,12 +51,20 @@ if (session_id()==null)
     <div class="nav-wrapper #009688 teal">
       <a  class="brand-logo">Inventory</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
+         <li><a class="btn" href="reportes.php">Crer Reporte</a></li>
+         <li><a class="btn" href="chat.php">Chat</a></li>
+         <li><a class="btn"  href="quejas.php">Quejas</a></li>
+         <li><a class='dropdown-button ' href="" data-activates='dropdown1'><i class="mdi mdi-account"></i></a></li>
         <li><a><?php echo $_SESSION['user']['username']; ?></a></li>
-        <li><a href="../validate/logout.php">Cerrar Sesión</a></li>
+        <!--<li><a href="../validate/logout.php">Cerrar Sesión</a></li>-->
       </ul>
     </div>
   </nav>
+
+   <ul id='dropdown1' class='dropdown-content'>
+    
+    <li><a href="../validate/logout.php">Cerrar Sesión</a></li>
+  </ul>
 
  	<div class="container">
  	<div class="row">
@@ -86,7 +94,7 @@ if (session_id()==null)
               <h4>Inventario de Hardware</h4>
             </div>
             <div class="card-action">
-            	<a href="" class="btn ">Entrar</a>
+            	<a href="hardware.php" class="btn ">Entrar</a>
 
             </div>
         </div>
@@ -99,10 +107,10 @@ if (session_id()==null)
              
             </div>
             <div class="card-content">
-              <h4>Bitacora </h4>
+              <h4>Bitácora </h4>
             </div>
             <div class="card-action">
-            	<a href="" class="btn ">Entrar</a>
+            	<a href="bitacora.php" class="btn ">Entrar</a>
             </div>
         </div>
     </div>

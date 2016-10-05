@@ -12,7 +12,6 @@ class Software
     public $id;
     public $nombre;
     public $version;
-    public $marca;
     public $documento_de_amparo;
     public $numero_licencias;
     public $plataforma;
@@ -44,7 +43,7 @@ class Software
 	function create(){
 	     
 	    // query to insert record
-	    $query = "INSERT INTO  $this->table_name SET nombre=:nombre, version=:version, marca=:marca, documento_de_amparo=:documento_de_amparo, numero_licencias=:numero_licencias,plataforma=:plataforma,clasificacion=:clasificacion,observaciones=:observaciones";
+	    $query = "INSERT INTO  $this->table_name SET nombre=:nombre, version=:version, documento_de_amparo=:documento_de_amparo, numero_licencias=:numero_licencias,plataforma=:plataforma,clasificacion=:clasificacion,observaciones=:observaciones";
 	     
 	    // prepare query
 	    $stmt = $this->conn->prepare($query);
@@ -54,7 +53,6 @@ class Software
 	    
 	    $this->nombre=htmlspecialchars(strip_tags($this->nombre));
 	    $this->version=htmlspecialchars(strip_tags($this->version));
-	    $this->marca=htmlspecialchars(strip_tags($this->marca));
 	    $this->documento_de_amparo=htmlspecialchars(strip_tags($this->documento_de_amparo));
 	    $this->numero_licencias=($this->numero_licencias);
 	    $this->plataforma=htmlspecialchars(strip_tags($this->plataforma));
@@ -67,7 +65,6 @@ class Software
 	    // bind values
 	    $stmt->bindParam(":nombre", $this->nombre);
 	    $stmt->bindParam(":version", $this->version);
-	    $stmt->bindParam(":marca", $this->marca);
 	    $stmt->bindParam(":documento_de_amparo", $this->documento_de_amparo);
 	    $stmt->bindParam(":numero_licencias", $this->numero_licencias);
 	    $stmt->bindParam(":plataforma", $this->plataforma);
@@ -109,7 +106,6 @@ class Software
 	    // set values to object properties
 	    $this->nombre = $row['nombre'];
 	    $this->version = $row['version'];
-	    $this->marca = $row['marca'];
 	    $this->documento_de_amparo = $row['documento_de_amparo'];
 	    $this->numero_licencias = $row['numero_licencias'];
 	    $this->plataforma = $row['plataforma'];
@@ -126,7 +122,7 @@ class Software
 	 
 	    // update query
 	    $query = "UPDATE " . $this->table_name .
-	            " SET nombre=:nombre, version=:version, marca=:marca, documento_de_amparo=:documento_de_amparo, numero_licencias=:numero_licencias,plataforma=:plataforma,clasificacion=:clasificacion,observaciones=:observaciones
+	            " SET nombre=:nombre, version=:version, documento_de_amparo=:documento_de_amparo, numero_licencias=:numero_licencias,plataforma=:plataforma,clasificacion=:clasificacion,observaciones=:observaciones
 	            WHERE id =:id";
 	 
 	    // prepare query statement
@@ -136,7 +132,6 @@ class Software
 	    
 	    $this->nombre=htmlspecialchars(strip_tags($this->nombre));
 	    $this->version=htmlspecialchars(strip_tags($this->version));
-	    $this->marca=htmlspecialchars(strip_tags($this->marca));
 	    $this->documento_de_amparo=htmlspecialchars(strip_tags($this->documento_de_amparo));
 	    $this->numero_licencias=($this->numero_licencias);
 	    $this->plataforma=htmlspecialchars(strip_tags($this->plataforma));
@@ -146,7 +141,7 @@ class Software
 	    // bind new values
 	    $stmt->bindParam(":nombre", $this->nombre);
 	    $stmt->bindParam(":version", $this->version);
-	    $stmt->bindParam(":marca", $this->marca);
+	
 	    $stmt->bindParam(":documento_de_amparo", $this->documento_de_amparo);
 	    $stmt->bindParam(":numero_licencias", $this->numero_licencias);
 	    $stmt->bindParam(":plataforma", $this->plataforma);

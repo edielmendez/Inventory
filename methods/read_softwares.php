@@ -37,7 +37,6 @@ if($num>0){
 			$data .= '"id":"'  . $id . '",';
 			$data .= '"nombre":"'   . $nombre . '",';
 			$data .= '"version":"'   . $version . '",';
-			$data .= '"marca":"'   . $marca . '",';
 			$data .= '"documento_de_amparo":"'   . $documento_de_amparo . '",';
 			$data .= '"numero_licencias":"'   . $numero_licencias . '",';
 			$data .= '"plataforma":"'   . $plataforma . '",';

@@ -24,7 +24,6 @@ $software_arr[] = array(
     "id" => $software->id,
    	"nombre"=> $software->nombre,
 	"version"=> $software->version,
-	"marca"=> $software->marca,
 	"documento_de_amparo"=> $software->documento_de_amparo,
 	"numero_licencias"=> $software->numero_licencias,
 	"plataforma"=> $software->plataforma,

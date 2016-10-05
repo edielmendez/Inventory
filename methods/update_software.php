@@ -22,7 +22,6 @@ $software->id = $data->id;
 
 $software->nombre = $data->nombre;
 $software->version = $data->version;
-$software->marca = $data->marca;
 $software->documento_de_amparo = $data->documento_de_amparo;
 $software->numero_licencias = $data->numero_licencias;
 $software->plataforma = $data->plataforma;
